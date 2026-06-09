@@ -32,18 +32,7 @@ Development Tools
 * Git
 * GitHub
 
-📂 Project Structure
-Legal Document Summarizer9
-│
-├── App/
-├── Data/
-├── Outputs/
-├── Reports/
-├── Scripts/
-│
-└── Legal Document Summarization using NLP.readme.txt
-
- Project Workflow
+** Project Workflow**
 
 1. Data Collection
 * Legal documents collected from publicly available datasets.
