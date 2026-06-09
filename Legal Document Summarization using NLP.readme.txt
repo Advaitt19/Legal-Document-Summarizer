@@ -1,0 +1,164 @@
+1. Project Overview
+
+This project implements an end-to-end NLP pipeline to automatically summarize long legal documents such as contracts, NDAs, and service agreements. The objective is to reduce manual review effort for legal professionals by generating concise summaries using AI.
+
+Two approaches are implemented and compared:
+
+Extractive Summarization (Lex-Rank)
+
+Abstractive Summarization (BART Transformer)
+
+2. Dataset
+
+Dataset Name: Contract Understanding Atticus Dataset (CUAD)
+
+Format: JSON
+
+Usage: Raw legal contract text only
+
+Dataset path:
+
+data/raw/CUAD_v1.json
+
+3. Methodology
+3.1 Data Ingestion
+
+Legal contracts are loaded from the CUAD dataset and parsed into plain text.
+
+3.2 Preprocessing
+
+Text cleaning and normalization
+
+Token-based chunking to handle long documents
+
+3.3 Summarization
+
+Extractive: Lex-Rank algorithm (sentence selection)
+
+Abstractive: BART (facebook/bart-large-cnn)
+
+3.4 Evaluation
+
+Evaluation is performed using:
+
+ROUGE-1
+
+ROUGE-2
+
+ROUGE-L
+
+Accuracy is not used as summarization is a generative task.
+
+4. Project Structure
+NewtonAI_Legal_Summarization_Advait_Tandel/
+│
+├── code/
+│   └── src/
+│       ├── abstractive.py
+│       ├── extractive.py
+│       ├── preprocessing.py
+│       ├── data_ingestion.py
+│       ├── evaluation.py
+│       └── pipeline.py
+│
+├── data/
+│   └── raw/
+│       └── CUAD_v1.json
+│
+├── outputs/
+│   ├── contract_1.txt
+│   ├── contract_2.txt
+│   ├── contract_3.txt
+│   ├── contract_4.txt
+│   └── contract_5.txt
+│
+├── reports/
+│   ├── contract_summaries.pdf
+│   └── comparison_report.docx
+│
+├── notebook/
+│   └── Legal_Document_Summarization.ipynb
+│
+└── README.md
+
+5. How to Run the Pipeline
+
+From the project root directory, run:
+
+python code/src/pipeline.py
+
+
+This will:
+
+Load contracts
+
+Generate extractive summaries
+
+Generate abstractive summaries
+
+Compute ROUGE scores
+
+Save results to outputs/
+
+6. Generate PDF (Contract Summaries)
+
+Run:
+
+python reports/text_to_pdf.py
+
+
+Output:
+
+reports/contract_summaries.pdf
+
+
+Contains summaries of 5 legal contracts.
+
+7. Generate Comparison Report (DOCX)
+
+Run:
+
+python reports/generate_comparison_report.py
+
+
+Output:
+
+reports/comparison_report.docx
+
+
+This report compares extractive vs abstractive summarization and explains evaluation.
+
+8. Notebook Deliverable
+
+Notebook file:
+
+notebook/Legal_Document_Summarization.ipynb
+
+
+Contains:
+
+Problem statement
+
+Dataset loading
+
+Summarization demo
+
+ROUGE evaluation
+
+9. Deliverables Summary
+Deliverable	Status
+Code Pipeline	
+Dataset	
+Output Text Files	
+PDF Summaries	
+Comparison Report (DOCX)	
+Python File	
+README	
+
+10. Conclusion
+
+This project demonstrates a practical and scalable approach to legal document summarization using NLP. Extractive methods ensure legal accuracy, while abstractive methods improve readability. Together, they provide a strong foundation for AI-assisted legal review.
+
+11. Author
+
+Advait Abhijit Tandel
